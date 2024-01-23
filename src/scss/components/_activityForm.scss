@@ -1,0 +1,66 @@
+.activity-form-container {
+  background-color: #f0f6fc; /* Светло-синий фон */
+  padding: 20px;
+  border-radius: 20px; /* Округлые углы */
+  width: 400px;
+  margin: 0 auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Тень блока */
+}
+
+.activity-item {
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: #ffffff; /* Белый фон */
+  border-radius: 10px; /* Округлые углы */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Тень элемента */
+  transition: box-shadow 0.3s ease; /* Плавное изменение тени */
+}
+
+.activity-item:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Изменение тени при наведении */
+}
+
+.activity-item label {
+  display: block;
+  margin-bottom: 5px;
+  color: #4a4a4a;
+}
+
+.activity-item select,
+.activity-item input[type="time"] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #dcdcdc;
+  border-radius: 5px;
+  background-color: #f5f5f5;
+  color: #4a4a4a;
+  margin-bottom: 10px;
+  /* Убираем стрелочки для выбора времени */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  /* Добавляем кастомные стили для поля выбора времени */
+  background-image: url('data:image/svg+xml;utf8,<svg fill="%234a4a4a" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 10px top 50%;
+  background-size: 24px;
+  padding-right: 40px;
+}
+
+.activity-item input[type="time"]::-webkit-calendar-picker-indicator {
+  display: none; /* Убираем стандартную иконку выбора времени для Chrome */
+}
+
+.add-button {
+  background-color: #4e7cbf; /* Синяя кнопка */
+  color: #fff; /* Белый текст */
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-button:hover {
+  background-color: #345d8d; /* Изменение цвета при наведении */
+}

@@ -1,0 +1,60 @@
+
+@import './variables';
+@import './libs/normalize.scss';
+
+@import './components/header.scss';
+@import './components/activityForm';
+body {
+  background-color: #3F92D2;
+  font-family: '/src/fonts/RobotoCondensed-Italic-VariableFont_wght.ttf';
+}
+
+.wrapper {
+  width: calc(100vw - 100px);
+  height: 100%;
+  background-color: #fff;
+  margin: 50px auto;
+  border-radius: 10px;
+  max-width: 1400px;
+
+  @media(max-width:  645px) {
+    width: calc(100vw - 20px);
+    margin-top: 30px;
+  }
+}
+
+.content {
+  padding: 40px 40px  40px 40px;
+
+  &__title {
+    margin: 35px 0;
+    display: flex;
+    align-items: center;
+    font-weight: 800;
+    font-size: 38px;
+    margin-top: 60px;
+    margin-bottom: 50px;
+  }
+
+  &__items {
+    display: block;
+    align-items:center;
+    h1{
+      margin-bottom: 30px; 
+    }
+    p{
+      margin-bottom: 10px;
+    }
+    }
+
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @media (max-width: 1260px) {
+      // flex-direction: column-reverse;
+    }
+  }
+}
+
+
