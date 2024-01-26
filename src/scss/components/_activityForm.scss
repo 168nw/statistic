@@ -4,6 +4,7 @@
   border-radius: 20px; /* Округлые углы */
   width: 400px;
   margin: 0 auto;
+  margin-bottom: 50px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Тень блока */
 }
 
@@ -63,4 +64,39 @@
 
 .add-button:hover {
   background-color: #345d8d; /* Изменение цвета при наведении */
+}
+
+.delete_button {
+  font-size: 40px;
+}
+.delete-button-container {
+  float: right; /* Помещаем контейнер с кнопкой "Удалить" справа */
+}
+.delete-button {
+  border: none; /* Убираем границу кнопки */
+  background: none; /* Убираем фон кнопки */
+  color: rgb(0, 0, 0); /* Устанавливаем цвет текста кнопки */
+  cursor: pointer; /* Устанавливаем стиль курсора */
+}
+
+.fade-enter {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.fade-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-exit-active {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 300ms, transform 300ms;
 }

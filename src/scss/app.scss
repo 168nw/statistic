@@ -61,7 +61,6 @@ body {
   background-color: #4e7cbf; /* Синяя кнопка */
   color: #fff; /* Белый текст */
   padding: 12px 20px;
-  margin-top: 50px;
   border: 1px solid transparent;
   border-radius: 30px;
   cursor: pointer;
@@ -72,6 +71,10 @@ body {
 }
 .button:hover {
       background-color: #345d8d; /* Изменение цвета при наведении */
+}
+.button_start {
+  text-align: center;
+  margin-top: 50px;
 }
 
 

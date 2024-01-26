@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import dayjs from 'dayjs';
-import { TimePicker } from 'antd';
+import { TimePicker, Button } from 'antd';
+import ClearIcon from '@mui/icons-material/Clear';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
+
 
 const format = 'HH:mm';
 
@@ -46,15 +49,29 @@ const ActivityForm = () => {
     }
   };
 
+  const handleDeleteActivity = (index) => {
+    const newActivities = activities.filter((activity, i) => index !== i);
+    setActivities(newActivities);
+  };
+
   const addActivity = () => {
     const lastActivity = activities[activities.length - 1];
-    setActivities([...activities, { activity: '', startTime: lastActivity.endTime, endTime: lastActivity.endTime }]);
+    setActivities([...activities, { activity: '', startTime: lastActivity.endTime, endTime: '' }]);
   };
 
   return (
     <div className="activity-form-container">
+      <TransitionGroup>
       {activities.map((activity, index) => (
-        <div key={index} className="activity-item">
+                <CSSTransition key={index} timeout={500} classNames="fade">
+                <div className="activity-item">
+                {index !== 0 && (
+                  <div className="delete-button-container"> {/* Контейнер для кнопки "Удалить" */}
+                    <Button onClick={() => handleDeleteActivity(index)} className="delete-button">
+                      <ClearIcon/>
+                    </Button>
+                  </div>
+                  )}
           <label>Выберите вид занятости:</label>
           <select
             value={activity.activity}
@@ -62,15 +79,29 @@ const ActivityForm = () => {
           >
             <option value="">Выберите занятость</option>
             <option value="Сон">Сон</option>
-            <option value="Личная гигиена">Личная гигиена</option>
+            <option value="Прием пищи и питья">Прием пищи и питья</option>
+            <option value="Работа">Работа</option>
+            <option value="Работа по дому">Работа по дому</option>
+            <option value="Уход за внешними делами">Уход за внешними делами</option>
+            <option value="Уход за животными">Уход за животными</option>
+            <option value="Покупки">Покупки</option>
+            <option value="Досуг">Досуг</option>
+            <option value="Спорт">Спорт</option>
+            <option value="Религия ">Религия </option>
+            <option value="Волонтерство ">Волонтерство </option>
+            <option value="Телефонные звонки">Телефонные звонки</option>
+            <option value="Разное">Разное</option>
+
             {/* Другие варианты занятости здесь */}
           </select>
           <label>Время начала:</label>
           <TimePicker value={activity.startTime} onChange={(time) => handleStartTimeChange(index, time)} format={format} />
           <label>Время окончания:</label>
           <TimePicker value={activity.endTime} onChange={(time) => handleEndTimeChange(index, time)} format={format} />
-        </div>
-      ))}
+          </div>
+          </CSSTransition>
+          ))}
+          </TransitionGroup>
       <button onClick={addActivity} className="add-button">Добавить занятость</button>
     </div>
   );
