@@ -5,6 +5,7 @@ import './scss/app.scss';
 import Header from './components/Header';
 import Start from './pages/Start';
 import FormPage from './pages/FormPage';
+import ThankPage from './pages/ThankPage';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Start />} />
           <Route path="/form" element={<FormPage />} />
+          <Route path="/thank_page" element={<ThankPage />} />
         </Routes>
       </div>
     </div>

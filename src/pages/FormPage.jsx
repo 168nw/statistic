@@ -24,6 +24,11 @@ const FormPage = () => {
         <span>Вернуться назад</span>
         </Link>
       </div> 
+      <div className="add_form_button">
+          <Link to="/thank_page" class="button">
+        <span>Принять участие</span>
+        </Link>
+        </div>
     </div>
       
   )
