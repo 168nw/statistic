@@ -6,6 +6,7 @@
   margin: 0 auto;
   margin-bottom: 50px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Тень блока */
+  display:flexbox;
 }
 
 .activity-item {
@@ -55,11 +56,13 @@
 .add-button {
   background-color: #4e7cbf; /* Синяя кнопка */
   color: #fff; /* Белый текст */
-  padding: 12px 20px;
+  padding: 12px;
+  margin: 5px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  text-align: center;
 }
 
 .add-button:hover {
@@ -100,3 +103,9 @@
   transform: translateY(-20px);
   transition: opacity 300ms, transform 300ms;
 }
+
+.li_div {
+  display: list-item;
+  text-align: -webkit-match-parent;
+}
+

@@ -3,6 +3,7 @@ import dayjs from 'dayjs';
 import { TimePicker, Button } from 'antd';
 import ClearIcon from '@mui/icons-material/Clear';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import { Link } from 'react-router-dom';
 
 
 const format = 'HH:mm';
@@ -102,7 +103,10 @@ const ActivityForm = () => {
           </CSSTransition>
           ))}
           </TransitionGroup>
-      <button onClick={addActivity} className="add-button">Добавить занятость</button>
+            <li onClick={addActivity} className='button_li add-button'>Добавить занятость</li>
+          <Link to="/thank_page">
+            <li className='button_li add-button'> Принять участие</li>
+          </Link>
     </div>
   );
 };
