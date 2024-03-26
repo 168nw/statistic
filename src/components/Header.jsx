@@ -10,7 +10,7 @@ function Header() {
           <img width={40} height={40} src={logoSvg} alt="logoStatic" />
           <div>
             <h1>Statistic</h1>
-            <p>Полезная статистика</p>
+            <p opacity-5>Полезная статистика</p>
           </div>
         </div>
       </Link>
